@@ -30,7 +30,7 @@ import com.punchline.microspace.entities.templates.structures.BaseTurretTemplate
 public class SpaceWorld extends EntityWorld {
 	
 	public SpaceWorld(InputMultiplexer input, Camera camera) {
-		super(input, camera, new Vector2(0, 0), true);
+		super(input, camera, new Vector2(0, 0));
 		
 		debugView.enabled = true;
 		debugView.visible = true; //TODO: Remember to disable this...
