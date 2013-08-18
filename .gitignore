@@ -8,3 +8,8 @@
 *.db
 *.apk
 *.log
+/MicroSpace-android/bin/classes.dex
+/MicroSpace-android/bin/res/drawable-hdpi/ic_launcher.png
+/MicroSpace-android/bin/res/drawable-ldpi/ic_launcher.png
+/MicroSpace-android/bin/res/drawable-mdpi/ic_launcher.png
+/MicroSpace-android/bin/resources.ap_
