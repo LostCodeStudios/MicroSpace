@@ -7,7 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.CheckBox;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.punchline.javalib.BaseGame;
+import com.punchline.javalib.Game;
 import com.punchline.javalib.states.screens.MenuScreen;
 import com.punchline.javalib.utils.SoundManager;
 
@@ -16,7 +16,7 @@ public class SettingsScreen extends MenuScreen {
 	private CheckBox sounds;
 	private CheckBox music;
 	
-	public SettingsScreen(BaseGame game) {
+	public SettingsScreen(Game game) {
 		super(game, Gdx.files.internal("data/Skin/uiskin.json"), "Settings", null);
 	}
 

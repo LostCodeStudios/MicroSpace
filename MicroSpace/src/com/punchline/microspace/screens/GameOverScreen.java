@@ -6,14 +6,14 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.punchline.javalib.BaseGame;
+import com.punchline.javalib.Game;
 import com.punchline.javalib.states.screens.MenuScreen;
 import com.punchline.javalib.utils.SoundManager;
 import com.punchline.microspace.MicroGameOverInfo;
 
 public class GameOverScreen extends MenuScreen {
 	
-	public GameOverScreen(BaseGame game, MicroGameOverInfo info) {
+	public GameOverScreen(Game game, MicroGameOverInfo info) {
 		super(game, Gdx.files.internal("data/Skin/uiskin.json"), info.winningGroup.equals("leftTeam") ? "You won!" : "You lost!", null);
 	}
 

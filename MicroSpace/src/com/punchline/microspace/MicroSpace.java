@@ -3,13 +3,13 @@ package com.punchline.microspace;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.Texture;
-import com.punchline.javalib.BaseGame;
+import com.punchline.javalib.Game;
 import com.punchline.javalib.states.screens.SplashScreen;
 import com.punchline.javalib.utils.Convert;
 import com.punchline.javalib.utils.SoundManager;
 import com.punchline.microspace.screens.MainMenuScreen;
 
-public class MicroSpace extends BaseGame {
+public class MicroSpace extends Game { 
 	
 	@Override
 	public void create() {

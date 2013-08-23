@@ -2,7 +2,7 @@ package com.punchline.microspace.screens;
 
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.punchline.javalib.BaseGame;
+import com.punchline.javalib.Game;
 import com.punchline.javalib.entities.EntityWorld;
 import com.punchline.javalib.states.InputScreen;
 import com.punchline.javalib.utils.Display;
@@ -23,7 +23,7 @@ public class GameplayScreen extends InputScreen {
 	 * Constructs a GameplayScreen.
 	 * @param game The game that owns this screen.
 	 */
-	public GameplayScreen(BaseGame game) {
+	public GameplayScreen(Game game) {
 		super(game);
 		
 		camera = new OrthographicCamera(Display.getPreferredWidth(), Display.getPreferredHeight());
