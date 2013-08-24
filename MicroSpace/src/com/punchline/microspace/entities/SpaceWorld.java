@@ -59,11 +59,17 @@ public class SpaceWorld extends EntityWorld {
 		super.buildSystems();
 		
 		//Input
-		systems.addSystem(new TrackingCameraSystem("Player", camera, getBounds()));
 		systems.addSystem(new PlayerControlSystem(input));
 		
 		//Render
-		systems.addSystem(new HealthRenderSystem(camera, Gdx.files.internal("data/Textures/healthbarback.png"), Gdx.files.internal("data/Textures/healthbarfront.png")));
+		TrackingCameraSystem cameraSystem = new TrackingCameraSystem("Player", camera, getBounds());
+		systems.addSystem(cameraSystem);
+		
+		addPostProcessor("Player", cameraSystem);
+		
+		systems.addSystem(new HealthRenderSystem(camera, 
+				Gdx.files.internal("data/Textures/healthbarback.png"),
+				Gdx.files.internal("data/Textures/healthbarfront.png")));
 		
 		//Spawning
 		systems.addSystem(new AsteroidSpawnSystem());
