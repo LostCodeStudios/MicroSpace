@@ -52,7 +52,7 @@ public class SettingsScreen extends MenuScreen {
 
 			@Override
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-				game.setScreen(new MainMenuScreen(game));
+				SettingsScreen.this.exit();
 				SoundManager.playSound("back");
 			}	
 			
@@ -105,7 +105,7 @@ public class SettingsScreen extends MenuScreen {
 	@Override
 	public boolean keyDown(int keycode) {
 		if (keycode == Keys.ESCAPE || keycode == Keys.BACK) {
-			game.setScreen(new MainMenuScreen(game));
+			exit();
 			SoundManager.playSound("back");
 			
 			return true;

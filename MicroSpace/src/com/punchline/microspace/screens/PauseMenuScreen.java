@@ -11,13 +11,9 @@ import com.punchline.javalib.states.screens.MenuScreen;
 import com.punchline.javalib.utils.SoundManager;
 
 public class PauseMenuScreen extends MenuScreen {
-
-	private GameplayScreen gameplayScreen;
 	
-	public PauseMenuScreen(Game game, GameplayScreen gameplayScreen) {
+	public PauseMenuScreen(Game game) {
 		super(game, Gdx.files.internal("data/Skin/uiskin.json"), "Paused", null);
-		
-		this.gameplayScreen = gameplayScreen;
 	}
 
 	@Override
@@ -76,15 +72,15 @@ public class PauseMenuScreen extends MenuScreen {
 	 * Called when the Play Game button is pressed.
 	 */
 	private void onPlayGamePressed() {
-		game.setScreen(gameplayScreen);
+		exit();
 	}
 	
 	/**
 	 * Called when the Quit button is pressed.
 	 */
 	private void onQuitPressed() {
-		gameplayScreen.dispose();
-		game.setScreen(new MainMenuScreen(game));
+		exit(); //Get rid of the pause screen
+		game.getScreenManager().closeActiveScreen(); //Get rid of the gameplay screen too
 	}
 	
 }

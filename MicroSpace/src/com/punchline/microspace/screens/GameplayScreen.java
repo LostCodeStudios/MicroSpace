@@ -27,13 +27,12 @@ public class GameplayScreen extends InputScreen {
 		super(game);
 		
 		camera = new OrthographicCamera(Display.getPreferredWidth(), Display.getPreferredHeight());
-		//camera.setToOrtho(false, Display.getPreferredWidth(), Display.getPreferredHeight());
 		
 		world = new SpaceWorld(game.getInput(), camera);
 	}
 
 	private void onPaused() {
-		game.setScreen(new PauseMenuScreen(game, this), false);
+		game.getScreenManager().addScreen(new PauseMenuScreen(game));
 	}
 	
 	@Override
@@ -53,7 +52,8 @@ public class GameplayScreen extends InputScreen {
 		if (world.isGameOver()) {
 			MicroGameOverInfo info = (MicroGameOverInfo) world.getGameOverInfo();
 			
-			game.setScreen(new GameOverScreen(game, info));
+			exit();
+			game.getScreenManager().addScreen(new GameOverScreen(game, info));
 		}
 	}
 

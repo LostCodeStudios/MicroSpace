@@ -22,13 +22,15 @@ public class GameOverScreen extends MenuScreen {
 		super.initialize();
 		
 		Button quitButton = new TextButton("Back to Menu", skin);
+	
 		quitButton.addListener(new ClickListener() {
 			
 			@Override
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
 				super.touchUp(event, x, y, pointer, button);
 				
-				game.setScreen(new MainMenuScreen(game));
+				GameOverScreen.this.exit();
+				GameOverScreen.this.game.getScreenManager().closeActiveScreen();
 				
 				SoundManager.playSound("back");
 			}
@@ -42,7 +44,7 @@ public class GameOverScreen extends MenuScreen {
 	@Override
 	public boolean keyDown(int keycode) {
 		if (keycode == Keys.ESCAPE || keycode == Keys.BACK) {
-			game.setScreen(new MainMenuScreen(game));
+			exit();
 			
 			SoundManager.playSound("back");
 			

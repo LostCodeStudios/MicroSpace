@@ -100,14 +100,14 @@ public class MainMenuScreen extends MenuScreen {
 	 * Called when the Play Game button is pressed.
 	 */
 	private void onPlayGamePressed() {
-		game.setScreen(new GameplayScreen(game));
+		game.getScreenManager().addScreen(new GameplayScreen(game));
 	}
 	
 	/**
 	 * Called when the Settings button is pressed.
 	 */
 	private void onSettingsPressed() {
-		game.setScreen(new SettingsScreen(game));
+		game.getScreenManager().addScreen(new SettingsScreen(game));
 	}
 	
 	/**

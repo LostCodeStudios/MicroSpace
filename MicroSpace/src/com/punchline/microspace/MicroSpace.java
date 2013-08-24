@@ -9,7 +9,7 @@ import com.punchline.javalib.utils.Convert;
 import com.punchline.javalib.utils.SoundManager;
 import com.punchline.microspace.screens.MainMenuScreen;
 
-public class MicroSpace extends Game { 
+public class MicroSpace extends Game {
 	
 	@Override
 	public void create() {
@@ -23,7 +23,7 @@ public class MicroSpace extends Game {
 		
 		super.create();
 		
-		setScreen(new SplashScreen(this, Gdx.files.internal("data/Textures/splash.png"), new MainMenuScreen(this), 1.25f, 4f, 1.25f));
+		getScreenManager().addScreen(new SplashScreen(this, Gdx.files.internal("data/Textures/splash.png"), new MainMenuScreen(this), 1.25f, 4f, 1.25f));
 	}
 	
 	@Override
