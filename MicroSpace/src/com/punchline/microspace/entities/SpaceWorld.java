@@ -65,8 +65,6 @@ public class SpaceWorld extends EntityWorld {
 		TrackingCameraSystem cameraSystem = new TrackingCameraSystem("Player", camera, getBounds());
 		systems.addSystem(cameraSystem);
 		
-		addPostProcessor("Player", cameraSystem);
-		
 		systems.addSystem(new HealthRenderSystem(camera, 
 				Gdx.files.internal("data/Textures/healthbarback.png"),
 				Gdx.files.internal("data/Textures/healthbarfront.png")));
@@ -105,6 +103,11 @@ public class SpaceWorld extends EntityWorld {
 		addTemplate("Mook", new MookTemplate());
 	}
 
+	@Override
+	protected void buildSpriteSheet() {
+		
+	}
+	
 	@Override
 	protected void buildEntities() {
 		super.buildEntities();

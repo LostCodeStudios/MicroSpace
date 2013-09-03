@@ -126,4 +126,10 @@ public class AsteroidTemplate implements EntityTemplate {
 		return e;
 	}
 
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

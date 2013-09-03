@@ -98,4 +98,10 @@ public class BaseShipTemplate implements EntityTemplate {
 		return e;
 	}
 
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

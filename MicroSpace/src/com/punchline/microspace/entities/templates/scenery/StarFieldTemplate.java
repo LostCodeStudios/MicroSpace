@@ -116,4 +116,10 @@ public class StarFieldTemplate implements EntityGroupTemplate {
 		return position;
 	}
 
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
