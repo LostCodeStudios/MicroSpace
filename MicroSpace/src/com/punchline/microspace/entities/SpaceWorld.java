@@ -123,5 +123,11 @@ public class SpaceWorld extends EntityWorld {
 		createEntity("Player", "leftTeam");
 		
 	}
+
+	@Override
+	protected void buildSpriteSheet() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
