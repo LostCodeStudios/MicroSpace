@@ -65,8 +65,6 @@ public class SpaceWorld extends EntityWorld {
 		TrackingCameraSystem cameraSystem = new TrackingCameraSystem("Player", camera, getBounds());
 		systems.addSystem(cameraSystem);
 		
-		addPostProcessor("Player", cameraSystem);
-		
 		systems.addSystem(new HealthRenderSystem(camera, 
 				Gdx.files.internal("data/Textures/healthbarback.png"),
 				Gdx.files.internal("data/Textures/healthbarfront.png")));
@@ -118,6 +116,12 @@ public class SpaceWorld extends EntityWorld {
 		createEntityGroup("Base", "rightTeam");
 		
 		createEntity("Player", "leftTeam");
+		
+	}
+
+	@Override
+	protected void buildSpriteSheet() {
+		// TODO Auto-generated method stub
 		
 	}
 	

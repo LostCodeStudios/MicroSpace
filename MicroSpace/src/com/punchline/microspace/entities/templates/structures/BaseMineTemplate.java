@@ -73,5 +73,11 @@ public class BaseMineTemplate implements EntityTemplate {
 		return e;
 	}
 
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }
