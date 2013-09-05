@@ -103,10 +103,6 @@ public class SpaceWorld extends EntityWorld {
 		addTemplate("Mook", new MookTemplate());
 	}
 
-	@Override
-	protected void buildSpriteSheet() {
-		
-	}
 	
 	@Override
 	protected void buildEntities() {
@@ -129,5 +125,6 @@ public class SpaceWorld extends EntityWorld {
 		// TODO Auto-generated method stub
 		
 	}
+
 	
 }
