@@ -30,7 +30,7 @@ import com.punchline.microspace.entities.templates.structures.BaseTurretTemplate
 public class SpaceWorld extends EntityWorld {
 	
 	public SpaceWorld(InputMultiplexer input, Camera camera) {
-		super(input, camera, new Vector2(0, 0), true);
+		super(input, camera, new Vector2(0, 0));
 		
 		debugView.enabled = true;
 		debugView.visible = true; //TODO: Remember to disable this...
@@ -59,11 +59,15 @@ public class SpaceWorld extends EntityWorld {
 		super.buildSystems();
 		
 		//Input
-		systems.addSystem(new TrackingCameraSystem("Player", camera, getBounds()));
 		systems.addSystem(new PlayerControlSystem(input));
 		
 		//Render
-		systems.addSystem(new HealthRenderSystem(camera, Gdx.files.internal("data/Textures/healthbarback.png"), Gdx.files.internal("data/Textures/healthbarfront.png")));
+		TrackingCameraSystem cameraSystem = new TrackingCameraSystem("Player", camera, getBounds());
+		systems.addSystem(cameraSystem);
+		
+		systems.addSystem(new HealthRenderSystem(camera, 
+				Gdx.files.internal("data/Textures/healthbarback.png"),
+				Gdx.files.internal("data/Textures/healthbarfront.png")));
 		
 		//Spawning
 		systems.addSystem(new AsteroidSpawnSystem());
@@ -100,6 +104,11 @@ public class SpaceWorld extends EntityWorld {
 	}
 
 	@Override
+	protected void buildSpriteSheet() {
+		
+	}
+	
+	@Override
 	protected void buildEntities() {
 		super.buildEntities();
 		
@@ -112,6 +121,12 @@ public class SpaceWorld extends EntityWorld {
 		createEntityGroup("Base", "rightTeam");
 		
 		createEntity("Player", "leftTeam");
+		
+	}
+
+	@Override
+	protected void buildSpriteSheet() {
+		// TODO Auto-generated method stub
 		
 	}
 	

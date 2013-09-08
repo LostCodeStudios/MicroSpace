@@ -7,7 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.CheckBox;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.punchline.javalib.BaseGame;
+import com.punchline.javalib.Game;
 import com.punchline.javalib.states.screens.MenuScreen;
 import com.punchline.javalib.utils.SoundManager;
 
@@ -16,7 +16,7 @@ public class SettingsScreen extends MenuScreen {
 	private CheckBox sounds;
 	private CheckBox music;
 	
-	public SettingsScreen(BaseGame game) {
+	public SettingsScreen(Game game) {
 		super(game, Gdx.files.internal("data/Skin/uiskin.json"), "Settings", null);
 	}
 
@@ -52,7 +52,7 @@ public class SettingsScreen extends MenuScreen {
 
 			@Override
 			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-				game.setScreen(new MainMenuScreen(game));
+				SettingsScreen.this.exit();
 				SoundManager.playSound("back");
 			}	
 			
@@ -105,7 +105,7 @@ public class SettingsScreen extends MenuScreen {
 	@Override
 	public boolean keyDown(int keycode) {
 		if (keycode == Keys.ESCAPE || keycode == Keys.BACK) {
-			game.setScreen(new MainMenuScreen(game));
+			exit();
 			SoundManager.playSound("back");
 			
 			return true;

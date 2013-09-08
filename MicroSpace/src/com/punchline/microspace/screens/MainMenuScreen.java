@@ -6,7 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.punchline.javalib.BaseGame;
+import com.punchline.javalib.Game;
 import com.punchline.javalib.states.screens.MenuScreen;
 import com.punchline.javalib.utils.SoundManager;
 
@@ -23,7 +23,7 @@ public class MainMenuScreen extends MenuScreen {
 	 * @param skinHandle A FileHandle pointing to the menu's skin.
 	 * @param textureHandle A FileHandle pointing to the background texture.
 	 */
-	public MainMenuScreen(BaseGame game) {
+	public MainMenuScreen(Game game) {
 		super(game, Gdx.files.internal("data/Skin/uiskin.json"), "Micro Space", null);
 	}
 
@@ -100,14 +100,14 @@ public class MainMenuScreen extends MenuScreen {
 	 * Called when the Play Game button is pressed.
 	 */
 	private void onPlayGamePressed() {
-		game.setScreen(new GameplayScreen(game));
+		game.getScreenManager().addScreen(new GameplayScreen(game));
 	}
 	
 	/**
 	 * Called when the Settings button is pressed.
 	 */
 	private void onSettingsPressed() {
-		game.setScreen(new SettingsScreen(game));
+		game.getScreenManager().addScreen(new SettingsScreen(game));
 	}
 	
 	/**
