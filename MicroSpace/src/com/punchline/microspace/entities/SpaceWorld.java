@@ -110,7 +110,7 @@ public class SpaceWorld extends EntityWorld {
 		addTemplate("Mook", new MookTemplate());
 		addTemplate("Boss", new BossTemplate());
 	}
-
+	
 	@Override
 	protected void buildEntities() {
 		super.buildEntities();
