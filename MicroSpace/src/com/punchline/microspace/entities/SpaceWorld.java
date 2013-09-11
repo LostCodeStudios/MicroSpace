@@ -102,11 +102,6 @@ public class SpaceWorld extends EntityWorld {
 		addTemplate("Asteroid", new AsteroidTemplate());
 		addTemplate("Mook", new MookTemplate());
 	}
-
-	@Override
-	protected void buildSpriteSheet() {
-		
-	}
 	
 	@Override
 	protected void buildEntities() {
