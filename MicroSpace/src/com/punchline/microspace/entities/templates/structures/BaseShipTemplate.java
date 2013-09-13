@@ -14,9 +14,9 @@ import com.punchline.javalib.entities.Entity;
 import com.punchline.javalib.entities.EntityWorld;
 import com.punchline.javalib.entities.components.generic.EntitySpawner;
 import com.punchline.javalib.entities.components.generic.Health;
-import com.punchline.javalib.entities.components.generic.Health.HealthEventCallback;
 import com.punchline.javalib.entities.components.physical.Body;
 import com.punchline.javalib.entities.components.render.Sprite;
+import com.punchline.javalib.entities.events.EventCallback;
 import com.punchline.javalib.entities.templates.EntityTemplate;
 import com.punchline.javalib.utils.BodyEditorLoader;
 import com.punchline.javalib.utils.Convert;
@@ -77,10 +77,12 @@ public class BaseShipTemplate implements EntityTemplate {
 		Health health = new GenericHealth(e, world, HEALTH);
 		
 		health.render = true;
-		health.onDeath = new HealthEventCallback() {
+		health.onDeath.addCallback(this, new EventCallback() {
 
 			@Override
-			public void invoke(Entity owner, EntityWorld world) {
+			public void invoke(Entity owner, Object... args) {
+				EntityWorld world = (EntityWorld) args[0];
+				
 				SoundManager.playSound("explosion");
 				
 				String winningTeam = group.equals("leftTeam") ? "rightTeam" : "leftTeam";
@@ -88,7 +90,7 @@ public class BaseShipTemplate implements EntityTemplate {
 				world.setGameOverInfo(new MicroGameOverInfo(winningTeam));
 			}
 			
-		};
+		});
 		
 		e.addComponent(health);
 		float offset = group.equals("leftTeam") ? HORIZONTAL_OFFSET : -HORIZONTAL_OFFSET;

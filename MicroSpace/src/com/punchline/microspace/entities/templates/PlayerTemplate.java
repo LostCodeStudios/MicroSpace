@@ -12,11 +12,11 @@ import com.punchline.javalib.entities.Entity;
 import com.punchline.javalib.entities.EntityWorld;
 import com.punchline.javalib.entities.GenericCollisionEvents;
 import com.punchline.javalib.entities.components.generic.Health;
-import com.punchline.javalib.entities.components.generic.Health.HealthEventCallback;
 import com.punchline.javalib.entities.components.generic.View;
 import com.punchline.javalib.entities.components.physical.Body;
 import com.punchline.javalib.entities.components.physical.Transform;
 import com.punchline.javalib.entities.components.render.Sprite;
+import com.punchline.javalib.entities.events.EventCallback;
 import com.punchline.javalib.entities.templates.EntityCreationArgs;
 import com.punchline.javalib.entities.templates.EntityTemplate;
 import com.punchline.javalib.utils.Convert;
@@ -83,16 +83,18 @@ public class PlayerTemplate implements EntityTemplate {
 		
 		e.addComponent(sensor);
 		
-		h.onDeath = new HealthEventCallback() {
+		h.onDeath.addCallback(this, new EventCallback() {
 			@Override
-			public void invoke(Entity owner, EntityWorld world) {
+			public void invoke(Entity owner, Object... args) {
+				EntityWorld world = (EntityWorld) args[0];
+				
 				SoundManager.playSound("explosion");
 				
 				world.safelyCreateEntity("Explosion", ((Transform) owner.getComponent(Transform.class)).getPosition());
 				
 				world.safeCreate(new EntityCreationArgs("Player", false, owner.getGroup())); //respawn
 			}
-		};
+		});
 		
 		e.addComponent(h);
 		e.addComponent(GenericCollisionEvents.damageVictim());

@@ -1,6 +1,5 @@
 package com.punchline.microspace.entities.systems;
 
-import com.badlogic.gdx.math.Vector2;
 import com.punchline.javalib.entities.Entity;
 import com.punchline.javalib.entities.components.physical.Body;
 import com.punchline.javalib.entities.systems.TagSystem;
