@@ -10,8 +10,11 @@ import com.punchline.javalib.entities.systems.generic.TrackingCameraSystem;
 import com.punchline.javalib.entities.systems.render.HealthRenderSystem;
 import com.punchline.javalib.utils.Convert;
 import com.punchline.microspace.entities.systems.AsteroidSpawnSystem;
+import com.punchline.microspace.entities.systems.BaseTurretSystem;
+import com.punchline.microspace.entities.systems.BossSystem;
 import com.punchline.microspace.entities.systems.PlayerControlSystem;
 import com.punchline.microspace.entities.templates.AsteroidTemplate;
+import com.punchline.microspace.entities.templates.BossTemplate;
 import com.punchline.microspace.entities.templates.ExplosionTemplate;
 import com.punchline.microspace.entities.templates.MookTemplate;
 import com.punchline.microspace.entities.templates.PlayerTemplate;
@@ -71,6 +74,10 @@ public class SpaceWorld extends EntityWorld {
 		
 		//Spawning
 		systems.addSystem(new AsteroidSpawnSystem());
+		
+		//AI
+		systems.addSystem(new BossSystem("Boss"));
+		systems.addSystem(new BaseTurretSystem("baseTurret"));
 	}
 
 	@Override
@@ -101,8 +108,8 @@ public class SpaceWorld extends EntityWorld {
 		addTemplate("Player", new PlayerTemplate());
 		addTemplate("Asteroid", new AsteroidTemplate());
 		addTemplate("Mook", new MookTemplate());
+		addTemplate("Boss", new BossTemplate());
 	}
-
 	
 	@Override
 	protected void buildEntities() {
@@ -117,6 +124,7 @@ public class SpaceWorld extends EntityWorld {
 		createEntityGroup("Base", "rightTeam");
 		
 		createEntity("Player", "leftTeam");
+		createEntity("Boss", new Vector2(3,1));
 		
 	}
 
