@@ -89,7 +89,22 @@ public class BulletTemplate implements EntityTemplate {
 				}
 	
 				@Override
-				public float onCollide(Entity container, Entity victim) {					
+				public void onCollide(Entity container, Entity victim) {					
+					Bullet b = (Bullet) container.getComponent(Bullet.class);
+					
+					//IF THE VICTIM HAS HEALTH! RAWR
+					if(victim.hasComponent(Health.class))
+					{
+						Health h = (Health) victim.getComponent(Health.class);
+						h.drain(b.getDamage());
+					}
+					
+					container.delete();
+					
+				}
+
+				@Override
+				public float continueCollision(Entity container, Entity victim) {
 					Bullet b = (Bullet) container.getComponent(Bullet.class);
 					
 					if (victim == null) {
@@ -100,19 +115,8 @@ public class BulletTemplate implements EntityTemplate {
 					//If the bullet hits the firer, continue firing the bullet.
 					if(victim.getGroup().equals(b.getFirer().getGroup())) 
 						return 1;
-					
-					else{
-						//IF THE VICTIM HAS HEALTH! RAWR
-						if(victim.hasComponent(Health.class))
-						{
-							Health h = (Health) victim.getComponent(Health.class);
-							h.drain(b.getDamage());
-						}
-						
-						container.delete();
-						//TERMINATE THE RAY CAST
+					else 
 						return 0;
-					}
 				}
 			});
 		

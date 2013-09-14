@@ -24,8 +24,12 @@ public class BaseTurretSystem extends TagSystem {
 		Body b = (Body) e.getComponent(Body.class);
 		Sensor sensor = e.getComponent(Sensor.class);
 		for(int i=0;i<sensor.getEntitiesInView().size;i++){
-			if(sensor.getEntitiesInView().get(i).getGroup() != e.getGroup() )
+			if(sensor.getEntitiesInView().get(i).getGroup() != e.getGroup() ){
 				world.createEntity("Bullet", "big", b.getPosition(), new Vector2(12,0), e, 5f);
+				//Vector2 distance = ((Body)sensor.getEntitiesInView().get(i).getComponent(Body.class)).getPosition()
+						//.sub(b.getPosition());
+				//b.setRotation((float)Math.atan2(distance.y, distance.x));
+			}
 		}
 	}
 

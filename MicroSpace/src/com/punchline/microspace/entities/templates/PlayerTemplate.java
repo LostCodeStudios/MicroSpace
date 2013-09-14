@@ -90,9 +90,9 @@ public class PlayerTemplate implements EntityTemplate {
 				
 				SoundManager.playSound("explosion");
 				
-				world.safelyCreateEntity("Explosion", ((Transform) owner.getComponent(Transform.class)).getPosition());
+				world.createEntity("Explosion", ((Transform) owner.getComponent(Transform.class)).getPosition());
 				
-				world.safeCreate(new EntityCreationArgs("Player", false, owner.getGroup())); //respawn
+				world.create(new EntityCreationArgs("Player", false, owner.getGroup())); //respawn
 			}
 		});
 		
