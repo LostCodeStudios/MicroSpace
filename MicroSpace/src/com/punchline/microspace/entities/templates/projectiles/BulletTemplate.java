@@ -93,6 +93,8 @@ public class BulletTemplate implements EntityTemplate {
 					Bullet b = (Bullet) container.getComponent(Bullet.class);
 					
 					//IF THE VICTIM HAS HEALTH! RAWR
+					if(victim == null)
+						return;
 					if(victim.hasComponent(Health.class))
 					{
 						Health h = (Health) victim.getComponent(Health.class);
