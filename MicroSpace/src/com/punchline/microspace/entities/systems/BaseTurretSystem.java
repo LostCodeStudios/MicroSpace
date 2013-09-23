@@ -7,7 +7,14 @@ import com.punchline.javalib.entities.components.physical.Sensor;
 import com.punchline.javalib.entities.systems.TagSystem;
 
 public class BaseTurretSystem extends TagSystem {
-
+	
+	private float SHOT_DELAY = 3f;
+	private float BULLET_DAMAGE = 3f;
+	private float elapsedShot = 0f;
+	
+	private Body b;
+	Sensor sensor;
+	
 	public BaseTurretSystem(String tag) {
 		super("baseTurret");
 		// TODO Auto-generated constructor stub
@@ -18,19 +25,22 @@ public class BaseTurretSystem extends TagSystem {
 		// TODO Auto-generated method stub
 
 	}
-
+	
 	@Override
 	protected void process(Entity e) {
-		Body b = (Body) e.getComponent(Body.class);
-		Sensor sensor = e.getComponent(Sensor.class);
-		for(int i=0;i<sensor.getEntitiesInView().size;i++){
-			if(sensor.getEntitiesInView().get(i).getGroup() != e.getGroup() ){
-				world.createEntity("Bullet", "big", b.getPosition(), new Vector2(12,0), e, 5f);
-				//Vector2 distance = ((Body)sensor.getEntitiesInView().get(i).getComponent(Body.class)).getPosition()
-						//.sub(b.getPosition());
-				//b.setRotation((float)Math.atan2(distance.y, distance.x));
+		b = (Body) e.getComponent(Body.class);
+		sensor = e.getComponent(Sensor.class);
+		if (elapsedShot >= SHOT_DELAY)
+			for(int i=0;i<sensor.getEntitiesInView().size;i++){
+				if(sensor.getEntitiesInView().get(i).getGroup() != e.getGroup() ){
+					Body targetBody = ((Body)sensor.getEntitiesInView().get(i).getComponent(Body.class));
+					Vector2 aim = targetBody.getPosition().add(targetBody.getLinearVelocity()).sub(b.getPosition());
+					world.createEntity("Bullet", "big", b.getPosition(), aim.div(aim.len()).scl(12f), e, BULLET_DAMAGE);
+					elapsedShot = 0f;
+					break;
+				}
 			}
-		}
+		elapsedShot += deltaSeconds();
 	}
 
 }
