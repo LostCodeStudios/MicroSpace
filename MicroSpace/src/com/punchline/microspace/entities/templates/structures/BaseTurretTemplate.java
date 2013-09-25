@@ -12,6 +12,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.punchline.javalib.entities.Entity;
 import com.punchline.javalib.entities.EntityWorld;
+import com.punchline.javalib.entities.components.generic.Cooldown;
 import com.punchline.javalib.entities.components.generic.Health;
 import com.punchline.javalib.entities.components.generic.View;
 import com.punchline.javalib.entities.components.physical.Body;
@@ -70,6 +71,9 @@ public class BaseTurretTemplate implements EntityTemplate {
 		//HEALTH
 		Health h = (Health) e.addComponent(new Health(e, world, 1500f));
 		h.render = true;
+		
+		//COOLDOWNS
+		Cooldown shoot = (Cooldown) e.addComponent(new Cooldown(e, world, 10f));
 		
 		//SENSORS
 		View sensor = new View(e,30f,1f);
