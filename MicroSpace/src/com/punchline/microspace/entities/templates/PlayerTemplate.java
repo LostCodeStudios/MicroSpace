@@ -78,6 +78,7 @@ public class PlayerTemplate implements EntityTemplate {
 		
 		final Health h = new GenericHealth(e, world, 10f);
 		h.render = true;
+		h.setRegenerationRate(world, 1);
 		
 		View sensor = new View(e, 15f, 0.3f);
 		
