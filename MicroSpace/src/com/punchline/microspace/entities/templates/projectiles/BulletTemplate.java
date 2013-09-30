@@ -12,6 +12,7 @@ import com.punchline.javalib.entities.EntityWorld;
 import com.punchline.javalib.entities.components.ComponentManager;
 import com.punchline.javalib.entities.components.generic.Bullet;
 import com.punchline.javalib.entities.components.generic.Health;
+import com.punchline.javalib.entities.components.physical.Body;
 import com.punchline.javalib.entities.components.physical.Collidable;
 import com.punchline.javalib.entities.components.physical.Particle;
 import com.punchline.javalib.entities.components.render.Sprite;
@@ -66,6 +67,9 @@ public class BulletTemplate implements EntityTemplate {
 		
 		Entity firer = (Entity)args[3];
 		float damage = (Float)args[4];
+		
+		Vector2 firePos = ((Body)firer.getComponent(Body.class)).getPosition();
+		//double range = (Double)args[5];MAKE BULLET SYSTEM HANDLE RANGE 'N SHIT
 	
 		
 

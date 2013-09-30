@@ -32,15 +32,15 @@ public class BaseTurretSystem extends TagSystem {
 		sensor = e.getComponent(Sensor.class);
 		shoot = (Cooldown)e.getComponent(Cooldown.class);
 		
-		if (shoot.tick())
-			for(int i=0;i<sensor.getEntitiesInView().size;i++){
+		if (shoot.tick())//targetBody.getPosition().sub(b.getPosition()).add(targetBody.getLinearVelocity().scl(targetBody.getPosition().sub(b.getPosition()).div(12f)))
+			for(int i=0;i<sensor.getEntitiesInView().size;i++){//pos1 - (pos2+(v1*dis/V2))
 				if(sensor.getEntitiesInView().get(i).getGroup() != e.getGroup() ){
 					Body targetBody = ((Body)sensor.getEntitiesInView().get(i).getComponent(Body.class));
-					Vector2 aim = targetBody.getPosition()/*.add(targetBody.getLinearVelocity())*/.sub(b.getPosition());
+					Vector2 aim = targetBody.getPosition().sub(b.getPosition());
 					if(e.getGroup().equals("leftTeam"))
-						world.createEntity("Bullet", "red", b.getPosition(), aim.div(aim.len()).scl(12f), e, BULLET_DAMAGE);
+						world.createEntity("Bullet", "red", b.getPosition(), aim.div(aim.len()).scl(20f), e, BULLET_DAMAGE);
 					if(e.getGroup().equals("rightTeam"))
-						world.createEntity("Bullet", "purple", b.getPosition(), aim.div(aim.len()).scl(12f), e, BULLET_DAMAGE);
+						world.createEntity("Bullet", "purple", b.getPosition(), aim.div(aim.len()).scl(20f), e, BULLET_DAMAGE);
 					shoot.fillMax();
 					return;
 				}
