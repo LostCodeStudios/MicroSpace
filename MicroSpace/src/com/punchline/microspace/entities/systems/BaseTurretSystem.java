@@ -32,7 +32,7 @@ public class BaseTurretSystem extends TagSystem {
 		sensor = e.getComponent(Sensor.class);
 		shoot = (Cooldown)e.getComponent(Cooldown.class);
 		
-		if (shoot.tick())//targetBody.getPosition().sub(b.getPosition()).add(targetBody.getLinearVelocity().scl(targetBody.getPosition().sub(b.getPosition()).div(12f)))
+		if (shoot.isFinished())//targetBody.getPosition().sub(b.getPosition()).add(targetBody.getLinearVelocity().scl(targetBody.getPosition().sub(b.getPosition()).div(12f)))
 			for(int i=0;i<sensor.getEntitiesInView().size;i++){//pos1 - (pos2+(v1*dis/V2))
 				if(sensor.getEntitiesInView().get(i).getGroup() != e.getGroup() ){
 					Body targetBody = ((Body)sensor.getEntitiesInView().get(i).getComponent(Body.class));
