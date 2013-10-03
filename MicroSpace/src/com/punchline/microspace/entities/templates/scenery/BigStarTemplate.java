@@ -11,6 +11,7 @@ import com.punchline.javalib.entities.EntityWorld;
 import com.punchline.javalib.entities.components.physical.Particle;
 import com.punchline.javalib.entities.components.physical.Transform;
 import com.punchline.javalib.entities.components.render.Animation;
+import com.punchline.javalib.entities.components.render.Parallax;
 import com.punchline.javalib.entities.templates.EntityTemplate;
 
 public class BigStarTemplate implements EntityTemplate {
@@ -50,6 +51,8 @@ public class BigStarTemplate implements EntityTemplate {
 		
 		Transform t = new Particle(e, position, 0f);
 		e.addComponent(t);
+		
+		e.addComponent(new Parallax(world.getCamera(), 1/16f));
 		
 		return e;
 	}

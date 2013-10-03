@@ -17,6 +17,7 @@ import com.punchline.javalib.entities.components.physical.Collidable;
 import com.punchline.javalib.entities.components.physical.Particle;
 import com.punchline.javalib.entities.components.render.Sprite;
 import com.punchline.javalib.entities.templates.EntityTemplate;
+import com.punchline.javalib.utils.LogManager;
 
 /**
  * @author William
@@ -75,7 +76,14 @@ public class BulletTemplate implements EntityTemplate {
 
 		//Particle
 		Particle p = (Particle)e.addComponent(new Particle(e, position, rotation, new Vector2(region.getRegionWidth()/2f, region.getRegionHeight()/2f)));
+		
+		if(linearVelocity.len() <= 0){
+			LogManager.error("BulletCreation", "VELOCITY IS LESS THAN 0");
+			linearVelocity = new Vector2(1,1);
+		}
+		
 		p.setLinearVelocity(linearVelocity);
+		
 		
 
 		//Bullet
