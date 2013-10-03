@@ -49,7 +49,7 @@ public class SmallStarTemplate implements EntityTemplate {
 		sprite.setStateTime(rand.nextFloat());
 		e.addComponent(sprite);
 		
-		e.addComponent(new Parallax(world.getCamera(), 3/4f));
+		e.addComponent(new Parallax(world.getCamera(), 1/16f));
 		
 		Transform t = new Particle(e, position, 0f);
 		e.addComponent(t);

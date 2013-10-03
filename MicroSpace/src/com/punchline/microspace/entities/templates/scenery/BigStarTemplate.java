@@ -52,7 +52,7 @@ public class BigStarTemplate implements EntityTemplate {
 		Transform t = new Particle(e, position, 0f);
 		e.addComponent(t);
 		
-		e.addComponent(new Parallax(world.getCamera(), 2/3f));
+		e.addComponent(new Parallax(world.getCamera(), 1/8f));
 		
 		return e;
 	}

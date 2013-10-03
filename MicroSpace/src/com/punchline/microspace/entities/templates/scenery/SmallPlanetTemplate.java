@@ -10,6 +10,7 @@ import com.punchline.javalib.entities.EntityWorld;
 import com.punchline.javalib.entities.components.physical.Particle;
 import com.punchline.javalib.entities.components.physical.Transform;
 import com.punchline.javalib.entities.components.render.Animation;
+import com.punchline.javalib.entities.components.render.Parallax;
 import com.punchline.javalib.entities.templates.EntityTemplate;
 
 public class SmallPlanetTemplate implements EntityTemplate {
@@ -45,6 +46,7 @@ public class SmallPlanetTemplate implements EntityTemplate {
 			}
 		};
 		
+		e.addComponent(new Parallax(world.getCamera(), 1/8f));
 		sprite.setStateTime(type); //Stay at this frame.
 		
 		e.addComponent(sprite);
