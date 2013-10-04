@@ -31,17 +31,18 @@ public class BaseTurretSystem extends TagSystem {
 		b = (Body) e.getComponent(Body.class);
 		sensor = e.getComponent(Sensor.class);
 		shoot = (Cooldown)e.getComponent(Cooldown.class);
+		shoot.drain(1f);
 		
 		if (shoot.isFinished())//targetBody.getPosition().sub(b.getPosition()).add(targetBody.getLinearVelocity().scl(targetBody.getPosition().sub(b.getPosition()).div(12f)))
 			for(int i=0;i<sensor.getEntitiesInView().size;i++){//pos1 - (pos2+(v1*dis/V2))
 				if(sensor.getEntitiesInView().get(i).getGroup() != e.getGroup() ){
 					Body targetBody = ((Body)sensor.getEntitiesInView().get(i).getComponent(Body.class));
-					Vector2 aim = targetBody.getPosition().sub(b.getPosition());
+					Vector2 aim = targetBody.getPosition().sub(b.getPosition()).add(targetBody.getLinearVelocity().scl(targetBody.getPosition().sub(b.getPosition()).len()/40f ));//Approximates targets future position using it's current distance, velocity, and the bullets velocity
 					if(e.getGroup().equals("leftTeam"))
-						world.createEntity("Bullet", "red", b.getPosition(), aim.div(aim.len()).scl(20f), e, BULLET_DAMAGE);
+						world.createEntity("Bullet", "red", b.getPosition(), aim.div(aim.len()).scl(40f), e, BULLET_DAMAGE);
 					if(e.getGroup().equals("rightTeam"))
-						world.createEntity("Bullet", "purple", b.getPosition(), aim.div(aim.len()).scl(20f), e, BULLET_DAMAGE);
-					shoot.fillMax();
+						world.createEntity("Bullet", "purple", b.getPosition(), aim.div(aim.len()).scl(40f), e, BULLET_DAMAGE);
+					shoot.restart();
 					return;
 				}
 			}
