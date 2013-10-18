@@ -184,7 +184,7 @@ public class PlayerControlSystem extends InputSystem {
 
 	@Override
 	public void resume() {
-
+		super.resume();
 		input.addProcessor(stage);
 	}
 
