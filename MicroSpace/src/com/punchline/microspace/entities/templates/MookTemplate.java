@@ -11,6 +11,8 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.punchline.javalib.entities.Entity;
 import com.punchline.javalib.entities.EntityWorld;
 import com.punchline.javalib.entities.GenericCollisionEvents;
+import com.punchline.javalib.entities.components.generic.Cooldown;
+import com.punchline.javalib.entities.components.generic.View;
 import com.punchline.javalib.entities.components.physical.Body;
 import com.punchline.javalib.entities.components.physical.Collidable;
 import com.punchline.javalib.entities.components.render.Sprite;
@@ -42,7 +44,7 @@ public class MookTemplate implements EntityTemplate {
 		String group = (String) args[0];
 		Vector2 position = (Vector2) args[1];
 		
-		e.init("", group, "Mook");
+		e.init("mook", group, "Mook");
 		
 		Sprite s = new Sprite();
 		
@@ -70,10 +72,18 @@ public class MookTemplate implements EntityTemplate {
 		e.addComponent(GenericCollisionEvents.damageVictim());
 		//e.addComponent(new Collidable(){});
 		
+		//Sensors
+		View sensor = new View(e,7f,.5f);
+		
+		//Cooldowns
+		Cooldown shoot = new Cooldown(world, 10f);
+		
 		e.addComponent(s);
 		e.addComponent(b);
+		e.addComponent(sensor);
+		e.addComponent(shoot);
 		
-		e.addComponent(new GenericHealth(e, world, 1f));
+		e.addComponent(new GenericHealth(e, world, 5f));
 		
 		return e;
 	}

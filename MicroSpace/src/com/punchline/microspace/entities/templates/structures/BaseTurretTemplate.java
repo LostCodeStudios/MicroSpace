@@ -76,7 +76,7 @@ public class BaseTurretTemplate implements EntityTemplate {
 		Cooldown shoot = new Cooldown(world, 10f);
 		e.addComponent(shoot);
 		//SENSORS
-		View sensor = new View(e,30f,1f);
+		View sensor = new View(e,30f,1f,20);
 		//sensor.setOffset(200);
 		
 		e.addComponent(sensor);

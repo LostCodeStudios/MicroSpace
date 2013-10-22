@@ -12,6 +12,7 @@ import com.punchline.javalib.utils.Convert;
 import com.punchline.microspace.entities.systems.AsteroidSpawnSystem;
 import com.punchline.microspace.entities.systems.BaseTurretSystem;
 import com.punchline.microspace.entities.systems.BossSystem;
+import com.punchline.microspace.entities.systems.MookSystem;
 import com.punchline.microspace.entities.systems.PlayerControlSystem;
 import com.punchline.microspace.entities.templates.AsteroidTemplate;
 import com.punchline.microspace.entities.templates.BossTemplate;
@@ -78,6 +79,7 @@ public class SpaceWorld extends EntityWorld {
 		//AI
 		systems.addSystem(new BossSystem("Boss"));
 		systems.addSystem(new BaseTurretSystem("baseTurret"));
+		systems.addSystem(new MookSystem("mook"));
 	}
 
 	@Override
