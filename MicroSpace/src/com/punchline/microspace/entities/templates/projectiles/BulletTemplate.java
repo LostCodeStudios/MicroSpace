@@ -101,7 +101,7 @@ public class BulletTemplate implements EntityTemplate {
 				}
 	
 				@Override
-				public void onCollide(Entity container, Entity victim) {					
+				public void onBeginContact(Entity container, Entity victim) {					
 					Bullet b = (Bullet) container.getComponent(Bullet.class);
 					
 					//IF THE VICTIM HAS HEALTH! RAWR

@@ -1,5 +1,7 @@
 package com.punchline.microspace;
 
+import java.io.IOException;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.Texture;
@@ -36,11 +38,11 @@ public class MicroSpace extends Game {
 		SoundManager.setSoundVolume(soundVol);
 		SoundManager.setMusicVolume(musicVol);
 		
-		SoundManager.addSound("back", Gdx.files.internal("data/Sounds/back.wav"));
-		SoundManager.addSound("select", Gdx.files.internal("data/Sounds/select.wav"));
-		SoundManager.addSound("shot", Gdx.files.internal("data/Sounds/shot.wav"));
-		SoundManager.addSound("explosion", Gdx.files.internal("data/Sounds/explosion.wav"));
-		SoundManager.addSound("hit", Gdx.files.internal("data/Sounds/hit.wav"));
+		try {
+			SoundManager.loadContent(Gdx.files.internal("data/Sounds/sounds.xml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 }

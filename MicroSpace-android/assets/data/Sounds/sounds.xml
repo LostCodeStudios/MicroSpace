@@ -1,0 +1,9 @@
+<Sounds>
+	<Sound key="back">data/Sounds/back.wav</Sound>
+	<Sound key="select">data/Sounds/select.wav</Sound>
+	<Sound key="shot">data/Sounds/shot.wav</Sound>
+	<Sound key="explosion">data/Sounds/explosion.wav</Sound>
+	<Sound key="hit">data/Sounds/hit.wav</Sound>
+	
+	<Song key="music">data/Sounds/music.wav</Song>
+</Sounds>
