@@ -9,6 +9,11 @@ import com.punchline.javalib.entities.processes.ExpirationProcess;
 import com.punchline.javalib.entities.systems.TagSystem;
 import com.punchline.javalib.utils.Convert;
 
+/**
+ * @author GenericCode
+ *
+ */
+
 public class MookSystem extends TagSystem {
 
 	private final float BULLET_DAMAGE = 1f;
@@ -26,10 +31,7 @@ public class MookSystem extends TagSystem {
 	}
 
 	@Override
-	public void dispose() {
-		// TODO Auto-generated method stub
-
-	}
+	public void dispose() {}
 
 	@Override
 	protected void process(Entity e) {
@@ -41,17 +43,17 @@ public class MookSystem extends TagSystem {
 		team = e.getGroup();
 		
 		if(team == "leftTeam"){
-			color = "red";
-			b.setLinearVelocity(new Vector2(SPEED,0));
+			color = "red";//Sets bullet color
+			b.setLinearVelocity(new Vector2(SPEED,0));//Maintains velocity
 		}
 		if(team == "rightTeam"){
-			color = "purple";
-			b.setLinearVelocity(new Vector2(-SPEED,0));
+			color = "purple";//Sets bullet color
+			b.setLinearVelocity(new Vector2(-SPEED,0));//Maintains velocity
 		}
 		
-		for(int j=0;j<sensor.getEntitiesInView().size;j++){
+		for(int j=0;j<sensor.getEntitiesInView().size;j++){//Checks visible entities for enemies
 			if(sensor.getEntitiesInView().get(j).getGroup() != team ){
-				b.setLinearVelocity(new Vector2(0,0));
+				b.setLinearVelocity(new Vector2(0,0));//Stops mook in place
 			}
 		if (shoot.isFinished())
 			for(int i=0;i<sensor.getEntitiesInView().size;i++){
@@ -61,7 +63,7 @@ public class MookSystem extends TagSystem {
 						return;
 					Vector2 aim = targetBody.getPosition().sub(b.getPosition()).add(targetBody.getLinearVelocity().scl(targetBody.getPosition().sub(b.getPosition()).len()/BULLET_VELOCITY ));//Approximates targets future position using it's current distance, velocity, and the bullets velocity		
 					world.getProcessManager().attach(new ExpirationProcess( .7f, world.createEntity("Bullet", color, b.getPosition(), aim.div(aim.len()).scl(BULLET_VELOCITY), e, BULLET_DAMAGE)));
-					shoot.restart();
+					shoot.restart();//Restarts cooldown
 					return;
 			}
 		}
