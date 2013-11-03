@@ -2,10 +2,10 @@ package com.punchline.microspace.screens;
 
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.punchline.javalib.Game;
-import com.punchline.javalib.entities.EntityWorld;
-import com.punchline.javalib.states.InputScreen;
-import com.punchline.javalib.utils.Display;
+import com.lostcode.javalib.Game;
+import com.lostcode.javalib.entities.EntityWorld;
+import com.lostcode.javalib.states.InputScreen;
+import com.lostcode.javalib.utils.Display;
 import com.punchline.microspace.MicroGameOverInfo;
 import com.punchline.microspace.entities.SpaceWorld;
 

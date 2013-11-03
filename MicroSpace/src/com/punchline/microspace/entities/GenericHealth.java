@@ -1,11 +1,11 @@
 package com.punchline.microspace.entities;
 
-import com.punchline.javalib.entities.Entity;
-import com.punchline.javalib.entities.EntityWorld;
-import com.punchline.javalib.entities.components.generic.Health;
-import com.punchline.javalib.entities.components.physical.Transform;
-import com.punchline.javalib.entities.events.EventCallback;
-import com.punchline.javalib.utils.SoundManager;
+import com.lostcode.javalib.entities.Entity;
+import com.lostcode.javalib.entities.EntityWorld;
+import com.lostcode.javalib.entities.components.generic.Health;
+import com.lostcode.javalib.entities.components.physical.Transform;
+import com.lostcode.javalib.entities.events.EventCallback;
+import com.lostcode.javalib.utils.SoundManager;
 
 public class GenericHealth extends Health {
 

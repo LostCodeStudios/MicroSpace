@@ -10,15 +10,15 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
-import com.punchline.javalib.entities.Entity;
-import com.punchline.javalib.entities.EntityWorld;
-import com.punchline.javalib.entities.components.generic.EntitySpawner;
-import com.punchline.javalib.entities.components.generic.Health;
-import com.punchline.javalib.entities.components.physical.Body;
-import com.punchline.javalib.entities.components.render.Sprite;
-import com.punchline.javalib.entities.templates.EntityTemplate;
-import com.punchline.javalib.utils.BodyEditorLoader;
-import com.punchline.javalib.utils.Convert;
+import com.lostcode.javalib.entities.Entity;
+import com.lostcode.javalib.entities.EntityWorld;
+import com.lostcode.javalib.entities.components.generic.EntitySpawner;
+import com.lostcode.javalib.entities.components.generic.Health;
+import com.lostcode.javalib.entities.components.physical.Body;
+import com.lostcode.javalib.entities.components.render.Sprite;
+import com.lostcode.javalib.entities.templates.EntityTemplate;
+import com.lostcode.javalib.utils.BodyEditorLoader;
+import com.lostcode.javalib.utils.Convert;
 
 /**
  * @author William
@@ -36,7 +36,7 @@ public class BaseBarracksTemplate implements EntityTemplate {
 	}
 
 	/** {@inheritDoc}
-	 * @see com.punchline.javalib.entities.templates.EntityTemplate#buildEntity(com.punchline.javalib.entities.Entity, com.punchline.javalib.entities.EntityWorld, java.lang.Object[])
+	 * @see com.lostcode.javalib.entities.templates.EntityTemplate#buildEntity(com.lostcode.javalib.entities.Entity, com.lostcode.javalib.entities.EntityWorld, java.lang.Object[])
 	 */
 	@Override
 	public Entity buildEntity(Entity e, EntityWorld world, Object... args) {

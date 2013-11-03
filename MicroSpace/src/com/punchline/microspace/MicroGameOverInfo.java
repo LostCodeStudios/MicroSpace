@@ -1,6 +1,6 @@
 package com.punchline.microspace;
 
-import com.punchline.javalib.entities.GameOverInfo;
+import com.lostcode.javalib.entities.GameOverInfo;
 
 public class MicroGameOverInfo extends GameOverInfo {
 

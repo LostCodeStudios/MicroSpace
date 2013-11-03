@@ -7,17 +7,17 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
-import com.punchline.javalib.entities.Entity;
-import com.punchline.javalib.entities.EntityWorld;
-import com.punchline.javalib.entities.components.ComponentManager;
-import com.punchline.javalib.entities.components.generic.Bullet;
-import com.punchline.javalib.entities.components.generic.Health;
-import com.punchline.javalib.entities.components.physical.Body;
-import com.punchline.javalib.entities.components.physical.Collidable;
-import com.punchline.javalib.entities.components.physical.Particle;
-import com.punchline.javalib.entities.components.render.Sprite;
-import com.punchline.javalib.entities.templates.EntityTemplate;
-import com.punchline.javalib.utils.LogManager;
+import com.lostcode.javalib.entities.Entity;
+import com.lostcode.javalib.entities.EntityWorld;
+import com.lostcode.javalib.entities.components.ComponentManager;
+import com.lostcode.javalib.entities.components.generic.Bullet;
+import com.lostcode.javalib.entities.components.generic.Health;
+import com.lostcode.javalib.entities.components.physical.Body;
+import com.lostcode.javalib.entities.components.physical.Collidable;
+import com.lostcode.javalib.entities.components.physical.Particle;
+import com.lostcode.javalib.entities.components.render.Sprite;
+import com.lostcode.javalib.entities.templates.EntityTemplate;
+import com.lostcode.javalib.utils.LogManager;
 
 /**
  * @author William
@@ -43,7 +43,7 @@ public class BulletTemplate implements EntityTemplate {
 	
 	
 	/** {@inheritDoc}
-	 * @see com.punchline.javalib.entities.templates.EntityTemplate#buildEntity(com.punchline.javalib.entities.Entity, com.punchline.javalib.entities.EntityWorld, java.lang.Object[])
+	 * @see com.lostcode.javalib.entities.templates.EntityTemplate#buildEntity(com.lostcode.javalib.entities.Entity, com.lostcode.javalib.entities.EntityWorld, java.lang.Object[])
 	 */
 	@SuppressWarnings("unused")
 	@Override

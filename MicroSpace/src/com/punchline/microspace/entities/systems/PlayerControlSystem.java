@@ -10,12 +10,12 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Touchpad;
 import com.badlogic.gdx.scenes.scene2d.ui.Touchpad.TouchpadStyle;
-import com.punchline.javalib.entities.Entity;
-import com.punchline.javalib.entities.components.physical.Body;
-import com.punchline.javalib.entities.systems.InputSystem;
-import com.punchline.javalib.utils.Convert;
-import com.punchline.javalib.utils.Display;
-import com.punchline.javalib.utils.SoundManager;
+import com.lostcode.javalib.entities.Entity;
+import com.lostcode.javalib.entities.components.physical.Body;
+import com.lostcode.javalib.entities.systems.InputSystem;
+import com.lostcode.javalib.utils.Convert;
+import com.lostcode.javalib.utils.Display;
+import com.lostcode.javalib.utils.SoundManager;
 
 public class PlayerControlSystem extends InputSystem {
 

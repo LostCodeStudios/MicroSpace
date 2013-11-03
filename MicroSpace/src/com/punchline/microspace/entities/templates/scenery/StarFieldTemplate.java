@@ -5,9 +5,9 @@ import java.util.Random;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
-import com.punchline.javalib.entities.Entity;
-import com.punchline.javalib.entities.EntityWorld;
-import com.punchline.javalib.entities.templates.EntityGroupTemplate;
+import com.lostcode.javalib.entities.Entity;
+import com.lostcode.javalib.entities.EntityWorld;
+import com.lostcode.javalib.entities.templates.EntityGroupTemplate;
 
 public class StarFieldTemplate implements EntityGroupTemplate {
 

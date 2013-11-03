@@ -4,9 +4,9 @@ import java.util.Random;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
-import com.punchline.javalib.entities.Entity;
-import com.punchline.javalib.entities.systems.EntitySystem;
-import com.punchline.javalib.utils.Convert;
+import com.lostcode.javalib.entities.Entity;
+import com.lostcode.javalib.entities.systems.EntitySystem;
+import com.lostcode.javalib.utils.Convert;
 
 public class AsteroidSpawnSystem extends EntitySystem {
 

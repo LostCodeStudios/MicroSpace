@@ -5,10 +5,10 @@ import java.io.IOException;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.Texture;
-import com.punchline.javalib.Game;
-import com.punchline.javalib.states.screens.SplashScreen;
-import com.punchline.javalib.utils.Convert;
-import com.punchline.javalib.utils.SoundManager;
+import com.lostcode.javalib.Game;
+import com.lostcode.javalib.states.screens.SplashScreen;
+import com.lostcode.javalib.utils.Convert;
+import com.lostcode.javalib.utils.SoundManager;
 import com.punchline.microspace.screens.MainMenuScreen;
 
 public class MicroSpace extends Game {

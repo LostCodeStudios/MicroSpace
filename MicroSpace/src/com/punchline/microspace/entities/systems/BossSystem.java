@@ -1,8 +1,8 @@
 package com.punchline.microspace.entities.systems;
 
-import com.punchline.javalib.entities.Entity;
-import com.punchline.javalib.entities.components.physical.Body;
-import com.punchline.javalib.entities.systems.TagSystem;
+import com.lostcode.javalib.entities.Entity;
+import com.lostcode.javalib.entities.components.physical.Body;
+import com.lostcode.javalib.entities.systems.TagSystem;
 
 public class BossSystem extends TagSystem {
 	private float elapsedShot = 0f;

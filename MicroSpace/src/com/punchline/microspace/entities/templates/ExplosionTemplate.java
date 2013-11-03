@@ -5,11 +5,11 @@ package com.punchline.microspace.entities.templates;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
-import com.punchline.javalib.entities.Entity;
-import com.punchline.javalib.entities.EntityWorld;
-import com.punchline.javalib.entities.components.physical.Particle;
-import com.punchline.javalib.entities.components.render.ParticleEffect;
-import com.punchline.javalib.entities.templates.EntityTemplate;
+import com.lostcode.javalib.entities.Entity;
+import com.lostcode.javalib.entities.EntityWorld;
+import com.lostcode.javalib.entities.components.physical.Particle;
+import com.lostcode.javalib.entities.components.render.ParticleEffect;
+import com.lostcode.javalib.entities.templates.EntityTemplate;
 
 /**
  * @author William

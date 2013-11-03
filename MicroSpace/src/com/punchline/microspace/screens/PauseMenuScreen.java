@@ -6,9 +6,9 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.punchline.javalib.Game;
-import com.punchline.javalib.states.screens.MenuScreen;
-import com.punchline.javalib.utils.SoundManager;
+import com.lostcode.javalib.Game;
+import com.lostcode.javalib.states.screens.MenuScreen;
+import com.lostcode.javalib.utils.SoundManager;
 
 public class PauseMenuScreen extends MenuScreen {
 	

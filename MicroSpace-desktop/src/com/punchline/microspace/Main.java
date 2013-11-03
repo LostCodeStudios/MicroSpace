@@ -2,7 +2,7 @@ package com.punchline.microspace;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.punchline.javalib.utils.LogManager;
+import com.lostcode.javalib.utils.LogManager;
 
 public class Main {
 	public static void main(String[] args) {

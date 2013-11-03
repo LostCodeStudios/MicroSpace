@@ -5,13 +5,13 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
-import com.punchline.javalib.entities.Entity;
-import com.punchline.javalib.entities.EntityWorld;
-import com.punchline.javalib.entities.components.physical.Particle;
-import com.punchline.javalib.entities.components.physical.Transform;
-import com.punchline.javalib.entities.components.render.Animation;
-import com.punchline.javalib.entities.components.render.Parallax;
-import com.punchline.javalib.entities.templates.EntityTemplate;
+import com.lostcode.javalib.entities.Entity;
+import com.lostcode.javalib.entities.EntityWorld;
+import com.lostcode.javalib.entities.components.physical.Particle;
+import com.lostcode.javalib.entities.components.physical.Transform;
+import com.lostcode.javalib.entities.components.render.Animation;
+import com.lostcode.javalib.entities.components.render.Parallax;
+import com.lostcode.javalib.entities.templates.EntityTemplate;
 
 public class BigPlanetTemplate implements EntityTemplate {
 	

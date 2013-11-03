@@ -2,11 +2,11 @@ package com.punchline.microspace.entities.templates.structures;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
-import com.punchline.javalib.entities.Entity;
-import com.punchline.javalib.entities.EntityWorld;
-import com.punchline.javalib.entities.components.physical.Body;
-import com.punchline.javalib.entities.templates.EntityGroupTemplate;
-import com.punchline.javalib.utils.Convert;
+import com.lostcode.javalib.entities.Entity;
+import com.lostcode.javalib.entities.EntityWorld;
+import com.lostcode.javalib.entities.components.physical.Body;
+import com.lostcode.javalib.entities.templates.EntityGroupTemplate;
+import com.lostcode.javalib.utils.Convert;
 
 /**
  * Builds a base!
