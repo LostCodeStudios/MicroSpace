@@ -70,7 +70,6 @@ public class BulletTemplate implements EntityTemplate {
 		float damage = (Float)args[4];
 		
 		Vector2 firePos = ((Body)firer.getComponent(Body.class)).getPosition();
-		//double range = (Double)args[5];MAKE BULLET SYSTEM HANDLE RANGE 'N SHIT
 	
 		
 
@@ -135,7 +134,7 @@ public class BulletTemplate implements EntityTemplate {
 			});
 		
 		//Sprite TODO: Consider sprite pooling.
-		e.addComponent(new Sprite(bulletTex, bulletRect[0]));
+		e.addComponent(new Sprite(bulletTex, region));
 		
 		return e;
 	}

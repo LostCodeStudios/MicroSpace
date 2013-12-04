@@ -43,11 +43,11 @@ public class MookSystem extends TagSystem {
 		team = e.getGroup();
 		
 		if(team == "leftTeam"){
-			color = "red";//Sets bullet color
+			color = "yellow";//Sets bullet color
 			b.setLinearVelocity(new Vector2(SPEED,0));//Maintains velocity
 		}
 		if(team == "rightTeam"){
-			color = "purple";//Sets bullet color
+			color = "red";//Sets bullet color
 			b.setLinearVelocity(new Vector2(-SPEED,0));//Maintains velocity
 		}
 		

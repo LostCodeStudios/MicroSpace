@@ -36,9 +36,9 @@ public class BaseTurretSystem extends TagSystem {
 		shoot = (Cooldown)e.getComponent(Cooldown.class);
 		shoot.drain(1f);
 		if(e.getGroup().equals("leftTeam"))//sets bullet color
-			color = "red";
+			color = "big";
 		if(e.getGroup().equals("rightTeam"))
-			color = "purple";
+			color = "big";
 		
 		if (shoot.isFinished())
 			for(int i=0;i<sensor.getEntitiesInView().size;i++){
