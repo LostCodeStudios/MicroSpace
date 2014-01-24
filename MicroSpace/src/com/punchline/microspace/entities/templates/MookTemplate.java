@@ -68,7 +68,7 @@ public class MookTemplate implements EntityTemplate {
 		
 		Body b = new Body(world, e, bodyDef, fixtureDef);
 		
-		e.addComponent(GenericCollisionEvents.damageVictim());
+		//e.addComponent(GenericCollisionEvents.damageVictim());
 		//e.addComponent(new Collidable(){});
 		
 		//Sensors
