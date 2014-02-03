@@ -30,7 +30,7 @@ import com.punchline.microspace.entities.GenericHealth;
  */
 public class BaseShipTemplate implements EntityTemplate {
 	
-	private static final int HEALTH = 30;
+	private static final int HEALTH = 750;
 	private static final float HORIZONTAL_OFFSET = Convert.pixelsToMeters(50f);
 	
 	private Texture shipTexture;

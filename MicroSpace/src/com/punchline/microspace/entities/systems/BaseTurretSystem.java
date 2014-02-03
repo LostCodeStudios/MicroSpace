@@ -52,7 +52,7 @@ public class BaseTurretSystem extends TagSystem {
 				b.setRotation((float) Math.toRadians(targetBody.getPosition().sub(b.getPosition()).angle()));
 				if (shoot.isFinished()) {
 					Vector2 aim = targetBody.getPosition().sub(b.getPosition()).add(targetBody.getLinearVelocity().scl(targetBody.getPosition().sub(b.getPosition()).len()/40f ));//Approximates targets future position using it's current distance, velocity, and the bullets velocity		
-					world.getProcessManager().attach(new ExpirationProcess(.75f, world.createEntity("Bullet", color, b.getPosition(), aim.div(aim.len()).scl(40f), e, BULLET_DAMAGE)));
+					world.getProcessManager().attach(new ExpirationProcess(.75f, world.createEntity("Bullet", color, b.getPosition(), aim.nor().scl(40f), e, BULLET_DAMAGE)));
 					shoot.restart();//Restarts cooldown
 				}
 				return;

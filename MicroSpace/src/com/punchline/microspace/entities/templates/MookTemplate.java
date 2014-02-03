@@ -10,7 +10,6 @@ import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.lostcode.javalib.entities.Entity;
 import com.lostcode.javalib.entities.EntityWorld;
-import com.lostcode.javalib.entities.GenericCollisionEvents;
 import com.lostcode.javalib.entities.components.generic.Cooldown;
 import com.lostcode.javalib.entities.components.generic.View;
 import com.lostcode.javalib.entities.components.physical.Body;
@@ -82,7 +81,7 @@ public class MookTemplate implements EntityTemplate {
 		e.addComponent(sensor);
 		e.addComponent(shoot);
 		
-		e.addComponent(new GenericHealth(e, world, 5f));
+		e.addComponent(new GenericHealth(e, world, 10f));
 		
 		return e;
 	}

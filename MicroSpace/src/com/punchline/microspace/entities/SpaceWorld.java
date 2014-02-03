@@ -50,9 +50,9 @@ public class SpaceWorld extends EntityWorld {
 		return Convert.pixelsToMeters(
 				new Rectangle(
 					-Gdx.graphics.getWidth() * 2, 
-					-Gdx.graphics.getHeight() / 2, 
+					-Gdx.graphics.getHeight(), 
 					Gdx.graphics.getWidth() * 4, 
-					Gdx.graphics.getHeight()));
+					Gdx.graphics.getHeight()*2));
 	}
 
 	@Override

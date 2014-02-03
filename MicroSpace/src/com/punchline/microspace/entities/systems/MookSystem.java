@@ -35,7 +35,6 @@ public class MookSystem extends TagSystem {
 
 	@Override
 	protected void process(Entity e) {
-		
 		b = (Body) e.getComponent(Body.class);
 		sensor = e.getComponent(Sensor.class);
 		shoot = (Cooldown)e.getComponent(Cooldown.class);
@@ -62,7 +61,7 @@ public class MookSystem extends TagSystem {
 					if( targetBody == null)
 						return;
 					Vector2 aim = targetBody.getPosition().sub(b.getPosition()).add(targetBody.getLinearVelocity().scl(targetBody.getPosition().sub(b.getPosition()).len()/BULLET_VELOCITY ));//Approximates targets future position using it's current distance, velocity, and the bullets velocity		
-					world.getProcessManager().attach(new ExpirationProcess( .7f, world.createEntity("Bullet", color, b.getPosition(), aim.div(aim.len()).scl(BULLET_VELOCITY), e, BULLET_DAMAGE)));
+					world.getProcessManager().attach(new ExpirationProcess( .7f, world.createEntity("Bullet", color, b.getPosition(), aim.nor().scl(BULLET_VELOCITY), e, BULLET_DAMAGE)));
 					shoot.restart();//Restarts cooldown
 					return;
 			}

@@ -12,6 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Touchpad;
 import com.badlogic.gdx.scenes.scene2d.ui.Touchpad.TouchpadStyle;
 import com.lostcode.javalib.entities.Entity;
 import com.lostcode.javalib.entities.components.physical.Body;
+import com.lostcode.javalib.entities.processes.ExpirationProcess;
 import com.lostcode.javalib.entities.systems.InputSystem;
 import com.lostcode.javalib.utils.Convert;
 import com.lostcode.javalib.utils.Display;
@@ -21,8 +22,9 @@ public class PlayerControlSystem extends InputSystem {
 
 	private static final float SHOT_DELAY = 0.25f;
 	private static final float PLAYER_SPEED = Convert.pixelsToMeters(140f);
-	private static final float BULLET_SPEED = Convert.pixelsToMeters(250f);
+	private static final float BULLET_SPEED = 40f;
 	private static final float BULLET_DAMAGE = 1f;
+	private static final float BULLET_RANGE = 30f;
 
 	private boolean movingLeft = false;
 	private boolean movingRight = false;
@@ -140,8 +142,8 @@ public class PlayerControlSystem extends InputSystem {
 						fireL.nor();
 						fireL.scl(BULLET_SPEED);
 
-						world.createEntity("Bullet", "red", b.getPosition(),
-								fireL, e, BULLET_DAMAGE);
+						world.getProcessManager().attach(new ExpirationProcess( BULLET_RANGE/BULLET_SPEED, world.createEntity("Bullet", "red", b.getPosition(),
+								fireL, e, BULLET_DAMAGE)));
 						elapsedShot = 0f;
 						SoundManager.playSound("shot", 0.5f);
 					}
@@ -159,8 +161,8 @@ public class PlayerControlSystem extends InputSystem {
 						fireL.nor();
 						fireL.scl(BULLET_SPEED);
 
-						world.createEntity("Bullet", "red", b.getPosition(),
-								fireL, e, BULLET_DAMAGE);
+						world.getProcessManager().attach(new ExpirationProcess( BULLET_RANGE/BULLET_SPEED, world.createEntity("Bullet", "red", b.getPosition(),
+								fireL, e, BULLET_DAMAGE)));
 						elapsedShot = 0f;
 						SoundManager.playSound("shot", 0.5f);
 					}
